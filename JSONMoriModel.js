@@ -2,11 +2,9 @@ var mori = require('mori');
 
 var utils = require('./utils');
 var copyProperties = utils.copyProperties;
-var keyMirror = utils.keyMirror;
+var emptyFunction = utils.emptyFunction;
 
 var MoriModel = require('./MoriModel');
-
-function emptyFunction() {};
 
 function objectToHashMap(obj) {
   if (mori.is_map(obj)) {
@@ -64,7 +62,10 @@ copyProperties(JSONMoriModel.prototype, {
     return hashMapToObject(this._moriModel.getEdge(type, key, key2));
   },
   getEdges: function(type, key) {
-    return this._moriModel.getEdges(type, key);
+    return mori.reduce(function(accum, edge) {
+      accum.push(hashMapToObject(edge));
+      return accum;
+    }, [], this._moriModel.getEdges(type, key));
   },
   getNodesByType: function(type, key) {
     return mori.reduce(function(accum, node) {

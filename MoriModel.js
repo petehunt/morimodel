@@ -1,16 +1,9 @@
 var mori = require('mori');
 
+var EdgeKeys = require('./EdgeKeys');
+
 var utils = require('./utils');
 var copyProperties = utils.copyProperties;
-var keyMirror = utils.keyMirror;
-
-var EdgeKeys = keyMirror({
-  TYPE: null,
-  KEY: null,
-  KEY2: null,
-  ORDER: null,
-  DATA: null
-});
 
 // TODO: node types and edge types (classes, indexing)
 // TODO: build JSON interface on top (no need to require() mori)

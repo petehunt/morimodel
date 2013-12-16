@@ -8,6 +8,8 @@ function copyProperties(x, y) {
   return x;
 }
 
+function emptyFunction() {};
+
 function keyMirror(x) {
   var newObj = {};
 
@@ -22,5 +24,6 @@ function keyMirror(x) {
 
 module.exports = {
   copyProperties: copyProperties,
+  emptyFunction: emptyFunction,
   keyMirror: keyMirror
 };

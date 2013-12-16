@@ -9,7 +9,7 @@
   },
   "devDependencies": {},
   "scripts": {
-    "test": "jasmine-node *.spec.js"
+    "test": "jasmine-node ./*.spec.js"
   },
   "keywords": [
     "mori",
