@@ -32,9 +32,9 @@ function hashMapToObject(hashMap) {
   }, {}, mori.keys(hashMap));
 }
 
-function JSONMoriModel(moriModel, onChange) {
-  this._moriModel = moriModel || new MoriModel();
+function JSONMoriModel(onChange, moriModel) {
   this._onChange = onChange || emptyFunction;
+  this._moriModel = moriModel || new MoriModel();
 }
 
 copyProperties(JSONMoriModel.prototype, {
@@ -83,8 +83,8 @@ copyProperties(JSONMoriModel.prototype, {
   commit: function() {
     var nextMoriModel = this._moriModel.commit();
     var nextJSONMoriModel = new JSONMoriModel(
-      nextMoriModel,
-      this._onChange
+      this._onChange,
+      nextMoriModel
     );
     this._onChange(nextJSONMoriModel);
     return nextJSONMoriModel;
