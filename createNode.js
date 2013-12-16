@@ -1,3 +1,5 @@
+var EdgeKeys = require('./EdgeKeys');
+
 var utils = require('./utils');
 var copyProperties = utils.copyProperties;
 var emptyFunction = utils.emptyFunction;
@@ -23,8 +25,12 @@ function combineLifecycleHooks(prevHook, nextHook) {
   };
 }
 
-function createNode(spec, staticSpec) {
+function createNode(spec) {
   spec = spec || {};
+
+  var staticSpec = spec.static || {};
+
+  delete spec.static;
 
   function Node(jsonMoriModel, key) {
     this.nodeWillInitialize();
@@ -82,7 +88,7 @@ function createNode(spec, staticSpec) {
 
     getNodesByType: function(type, nodeClass) {
       return this.getEdges(type).map(function(edge) {
-        return nodeClass.get(this.model, edge.key2);
+        return nodeClass.get(this.model, edge[EdgeKeys.KEY2]);
       }.bind(this));
     }
   });
