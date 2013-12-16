@@ -1,0 +1,20 @@
+{
+  "name": "morimodel",
+  "version": "0.0.0",
+  "description": "Models for Mori",
+  "main": "index.js",
+  "dependencies": {
+    "jasmine-node": "~1.11.0",
+    "mori": "~0.2.4"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "jasmine-node *.spec.js"
+  },
+  "keywords": [
+    "mori",
+    "backbone"
+  ],
+  "author": "Pete Hunt",
+  "license": "Apache 2"
+}
