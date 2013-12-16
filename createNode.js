@@ -25,6 +25,8 @@ function combineLifecycleHooks(prevHook, nextHook) {
   };
 }
 
+// TODO: createEdge()?
+
 function createNode(spec) {
   spec = spec || {};
 

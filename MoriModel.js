@@ -5,8 +5,6 @@ var EdgeKeys = require('./EdgeKeys');
 var utils = require('./utils');
 var copyProperties = utils.copyProperties;
 
-// TODO: node types and edge types (classes, indexing)
-// TODO: build JSON interface on top (no need to require() mori)
 function MoriModel(nodes, edges) {
   this._nodes = this._prevNodes = nodes || mori.hash_map();
   this._edges = this._prevEdges = edges || mori.hash_map();
