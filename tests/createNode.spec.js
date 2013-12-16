@@ -1,5 +1,5 @@
-var JSONMoriModel = require('./JSONMoriModel');
-var createNode = require('./createNode');
+var JSONMoriModel = require('../src/JSONMoriModel');
+var createNode = require('../src/createNode');
 
 describe('createNode', function() {
   it('should work', function() {

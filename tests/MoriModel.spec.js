@@ -1,5 +1,5 @@
 var mori = require('mori');
-var MoriModel = require('./MoriModel');
+var MoriModel = require('../src/MoriModel');
 
 describe('MoriModel', function() {
   it('works', function() {

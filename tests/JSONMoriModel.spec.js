@@ -1,4 +1,4 @@
-var JSONMoriModel = require('./JSONMoriModel');
+var JSONMoriModel = require('../src/JSONMoriModel');
 
 describe('JSONMoriModel', function() {
   it('works', function() {

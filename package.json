@@ -2,14 +2,14 @@
   "name": "morimodel",
   "version": "0.0.0",
   "description": "Models for Mori",
-  "main": "index.js",
+  "main": "./src/index.js",
   "dependencies": {
     "jasmine-node": "~1.11.0",
     "mori": "~0.2.4"
   },
   "devDependencies": {},
   "scripts": {
-    "test": "jasmine-node ./*.spec.js"
+    "test": "jasmine-node ./tests/*.spec.js"
   },
   "keywords": [
     "mori",

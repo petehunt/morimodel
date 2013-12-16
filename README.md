@@ -54,7 +54,7 @@ var Photo = morimodel.createNode({
     upload: function(user, jpgUrl) {
       var newPhoto = this.create(
         model,
-        'photo:' + user.key + ':' + user.getPhotos().length,
+        'photo' + Date.now(), // create some unique ID
         {jpgUrl: jpgUrl}
       );
       newPhoto.addEdge('owner', user);
