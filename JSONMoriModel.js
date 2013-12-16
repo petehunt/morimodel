@@ -46,6 +46,10 @@ copyProperties(JSONMoriModel.prototype, {
   },
   updateNode: function(key, updates) {
     var prevNode = this._moriModel.getNode(key);
+    if (!prevNode) {
+      this.addNode(key, updates);
+      return;
+    }
     var newNode = mori.into(prevNode, objectToHashMap(updates));
     this._moriModel.addNode(key, newNode);
   },
