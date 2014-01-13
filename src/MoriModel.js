@@ -37,8 +37,11 @@ copyProperties(MoriModel.prototype, {
         if (mori.get(edge, EdgeKeys.TYPE) === type && mori.get(edge, EdgeKeys.KEY2) === key2) {
           replaced = true;
           return newEdge;
+        } else {
+          return edge
         }
-      });
+      }, prevEdges);
+      
       if (!replaced) {
         newEdges = mori.conj(newEdges, newEdge);
       }
@@ -64,7 +67,7 @@ copyProperties(MoriModel.prototype, {
     return mori.sort_by(function(edge) {
       return mori.get(edge, EdgeKeys.ORDER);
     }, mori.filter(function(edge) {
-      return mori.get(edge, EdgeKeys.TYPE);
+      return mori.get(edge, EdgeKeys.TYPE) == type;
     }, mori.get(this._edges, key)));
   },
   getNodesByType: function(type, key) {
