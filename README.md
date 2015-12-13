@@ -1,5 +1,7 @@
 # MoriModel
 
+![unmaintained](http://img.shields.io/badge/status-unmaintained-red.png)
+
 A Backbone.Model-like thing based on persistent data structures.
 
 ## Overview
